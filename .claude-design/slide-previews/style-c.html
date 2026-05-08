@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Style C — Verde Seco</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Sans:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet"/>
+<style>
+/* === STYLE C: VERDE SECO === */
+/* Near-black + emerald green — boutique Brazilian investment firm */
+:root {
+  --bg: #0e0e0e;
+  --bg-card: #141414;
+  --green: #2e7d4f;
+  --green-bright: #3da66a;
+  --green-muted: rgba(46,125,79,0.25);
+  --white: #f2f2f0;
+  --muted: rgba(242,242,240,0.38);
+  --slide-padding: clamp(2rem, 5vw, 5rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:var(--bg)}
+
+/* === VIEWPORT BASE === */
+.slide{
+  width:100vw;height:100vh;height:100dvh;
+  overflow:hidden;display:flex;flex-direction:column;position:relative;
+  background:var(--bg);
+}
+
+/* === LEFT GREEN EDGE BAR === */
+.left-bar{
+  position:absolute;left:0;top:0;bottom:0;width:3px;
+  background:linear-gradient(180deg,transparent,var(--green),var(--green-bright),transparent);
+}
+
+/* === AMBIENT GLOW === */
+.glow{
+  position:absolute;top:-20%;left:-10%;
+  width:clamp(300px,50vw,600px);height:clamp(300px,50vw,600px);
+  background:radial-gradient(circle,rgba(46,125,79,0.08) 0%,transparent 65%);
+  pointer-events:none;
+}
+
+/* === HEADER === */
+.header{
+  padding:clamp(1.5rem,3vh,2.5rem) var(--slide-padding) 0 calc(var(--slide-padding) + 12px);
+  display:flex;align-items:center;justify-content:space-between;
+  position:relative;z-index:2;flex-shrink:0;
+}
+.brand{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(0.7rem,1.1vw,0.9rem);font-weight:600;
+  letter-spacing:0.2em;text-transform:uppercase;color:var(--green-bright);
+}
+.conf-badge{
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:clamp(0.55rem,0.85vw,0.7rem);font-weight:300;
+  color:var(--muted);letter-spacing:0.15em;text-transform:uppercase;
+  border:1px solid rgba(46,125,79,0.3);
+  padding:0.3em 0.75em;border-radius:2px;
+}
+
+/* === MAIN CONTENT === */
+.slide-content{
+  flex:1;display:flex;flex-direction:column;justify-content:center;
+  padding:0 var(--slide-padding) 0 calc(var(--slide-padding) + 12px);
+  position:relative;z-index:2;
+}
+.type-tag{
+  font-family:'IBM Plex Sans',sans-serif;font-style:italic;
+  font-size:clamp(0.75rem,1.2vw,1rem);font-weight:300;
+  color:var(--green-bright);letter-spacing:0.05em;
+  margin-bottom:clamp(0.75rem,2vh,1.25rem);
+  opacity:0;animation:fadeUp 0.6s 0.15s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.main-title{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(2.5rem,6.5vw,6rem);font-weight:800;
+  line-height:0.95;letter-spacing:-0.02em;color:var(--white);
+  margin-bottom:clamp(1.5rem,3.5vh,3rem);
+  opacity:0;animation:fadeUp 0.8s 0.3s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.title-green{color:var(--green-bright);}
+
+/* === DATA ROW === */
+.data-row{
+  display:grid;grid-template-columns:repeat(3,auto);
+  gap:0;width:fit-content;
+  border:1px solid rgba(46,125,79,0.2);
+  margin-bottom:clamp(1.5rem,3.5vh,3rem);
+  opacity:0;animation:fadeUp 0.7s 0.45s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.data-cell{
+  padding:clamp(0.6rem,1.5vh,1rem) clamp(1rem,2.5vw,2rem);
+  border-right:1px solid rgba(46,125,79,0.2);
+}
+.data-cell:last-child{border-right:none;}
+.data-val{
+  font-family:'Syne',sans-serif;
+  font-size:clamp(1.2rem,2.5vw,2rem);font-weight:700;
+  color:var(--green-bright);display:block;line-height:1;
+}
+.data-key{
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:clamp(0.55rem,0.85vw,0.7rem);font-weight:300;
+  color:var(--muted);text-transform:uppercase;letter-spacing:0.12em;
+  margin-top:0.3em;display:block;
+}
+
+.description{
+  font-family:'IBM Plex Sans',sans-serif;
+  font-size:clamp(0.8rem,1.3vw,1rem);font-weight:300;
+  color:var(--muted);line-height:1.7;max-width:min(55ch,70%);
+  opacity:0;animation:fadeUp 0.7s 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+/* === FOOTER === */
+.footer{
+  padding:clamp(1rem,2.5vh,1.75rem) var(--slide-padding) clamp(1.5rem,3vh,2.5rem) calc(var(--slide-padding) + 12px);
+  display:flex;align-items:center;justify-content:space-between;
+  border-top:1px solid rgba(46,125,79,0.12);
+  flex-shrink:0;position:relative;z-index:2;
+}
+.footer-left{
+  font-family:'IBM Plex Sans',sans-serif;font-style:italic;
+  font-size:clamp(0.55rem,0.8vw,0.7rem);color:rgba(242,242,240,0.2);
+}
+.slide-num{
+  font-family:'Syne',sans-serif;font-weight:800;
+  font-size:clamp(0.7rem,1.1vw,0.9rem);
+  color:rgba(46,125,79,0.5);letter-spacing:0.1em;
+}
+
+@keyframes fadeUp{to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="left-bar"></div>
+  <div class="glow"></div>
+  <div class="header">
+    <span class="brand">Monte Bravo · Investment Banking</span>
+    <span class="conf-badge">Confidential</span>
+  </div>
+  <div class="slide-content">
+    <p class="type-tag">Brazilian Real Estate, May 2026</p>
+    <h1 class="main-title">High-End<br>Residential<br><span class="title-green">Real Estate</span></h1>
+    <div class="data-row">
+      <div class="data-cell">
+        <span class="data-val">R$2.9bi</span>
+        <span class="data-key">Total Issuances</span>
+      </div>
+      <div class="data-cell">
+        <span class="data-val">35</span>
+        <span class="data-key">Operations</span>
+      </div>
+      <div class="data-cell">
+        <span class="data-val">R$180M</span>
+        <span class="data-key">Current Offering</span>
+      </div>
+    </div>
+    <p class="description">A structured investment opportunity in São Paulo's premium residential market — managed by Brazil's leading independent wealth manager.</p>
+  </div>
+  <div class="footer">
+    <span class="footer-left">Monte Bravo Investimentos · Not for public distribution</span>
+    <span class="slide-num">01 / 08</span>
+  </div>
+</div>
+</body>
+</html>

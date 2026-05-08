@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Style A — Midnight Capital</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet"/>
+<style>
+/* === STYLE A: MIDNIGHT CAPITAL === */
+/* Deep navy + gold — classical institutional banking */
+:root {
+  --bg: #0b1629;
+  --bg2: #142240;
+  --gold: #c9a227;
+  --gold-light: #e8c84a;
+  --white: #f0eeea;
+  --muted: rgba(240,238,234,0.45);
+  --slide-padding: clamp(2rem, 5vw, 5rem);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{height:100%;overflow:hidden;background:var(--bg)}
+
+/* === VIEWPORT BASE === */
+.slide{
+  width:100vw;height:100vh;height:100dvh;
+  overflow:hidden;display:flex;flex-direction:column;position:relative;
+  background: linear-gradient(135deg, var(--bg) 0%, var(--bg2) 60%, #0d1f3c 100%);
+}
+
+/* === BACKGROUND TEXTURE === */
+.slide::before{
+  content:'';position:absolute;inset:0;
+  background-image: repeating-linear-gradient(
+    90deg, rgba(201,162,39,0.04) 0px, rgba(201,162,39,0.04) 1px,
+    transparent 1px, transparent 80px
+  ),
+  repeating-linear-gradient(
+    0deg, rgba(201,162,39,0.03) 0px, rgba(201,162,39,0.03) 1px,
+    transparent 1px, transparent 80px
+  );
+  pointer-events:none;
+}
+
+/* === GOLD TOP BAR === */
+.top-bar{
+  position:absolute;top:0;left:0;right:0;height:3px;
+  background:linear-gradient(90deg, transparent, var(--gold), transparent);
+}
+
+/* === HEADER === */
+.header{
+  display:flex;align-items:center;justify-content:space-between;
+  padding: clamp(1.5rem,3vh,2.5rem) var(--slide-padding) 0;
+  position:relative;z-index:2;
+}
+.logo-text{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.75rem,1.2vw,1rem);font-weight:500;
+  letter-spacing:0.15em;text-transform:uppercase;
+  color:var(--gold);
+}
+.date-tag{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.65rem,1vw,0.8rem);font-weight:300;
+  color:var(--muted);letter-spacing:0.1em;
+}
+
+/* === MAIN CONTENT === */
+.slide-content{
+  flex:1;display:flex;flex-direction:column;
+  justify-content:center;padding:0 var(--slide-padding);
+  position:relative;z-index:2;
+}
+
+.eyebrow{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.65rem,1vw,0.85rem);font-weight:400;
+  letter-spacing:0.25em;text-transform:uppercase;
+  color:var(--gold);margin-bottom:clamp(1rem,2vh,1.5rem);
+  opacity:0;transform:translateY(20px);
+  animation: rise 0.7s 0.2s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.main-title{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(2.2rem,6vw,5.5rem);font-weight:900;
+  line-height:1.05;color:var(--white);
+  margin-bottom:clamp(0.5rem,1.5vh,1rem);
+  opacity:0;transform:translateY(25px);
+  animation: rise 0.8s 0.35s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.main-title em{
+  font-style:italic;color:var(--gold-light);
+}
+.rule{
+  width:clamp(60px,8vw,120px);height:2px;
+  background:linear-gradient(90deg,var(--gold),transparent);
+  margin:clamp(1rem,2.5vh,2rem) 0;
+  opacity:0;animation: rise 0.6s 0.5s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.subtitle{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.85rem,1.5vw,1.15rem);font-weight:300;
+  color:var(--muted);line-height:1.6;
+  max-width:min(60ch,65%);
+  opacity:0;transform:translateY(20px);
+  animation: rise 0.7s 0.6s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+
+/* === STATS ROW === */
+.stats{
+  display:flex;gap:clamp(2rem,5vw,4rem);margin-top:clamp(1.5rem,4vh,3rem);
+  opacity:0;transform:translateY(20px);
+  animation: rise 0.7s 0.75s cubic-bezier(0.16,1,0.3,1) forwards;
+}
+.stat-item{}
+.stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:clamp(1.5rem,3vw,2.5rem);font-weight:700;
+  color:var(--gold);display:block;line-height:1;
+}
+.stat-label{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.6rem,0.9vw,0.75rem);font-weight:400;
+  color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:4px;
+}
+
+/* === FOOTER === */
+.footer{
+  padding:0 var(--slide-padding) clamp(1.5rem,3vh,2.5rem);
+  display:flex;align-items:center;justify-content:space-between;
+  position:relative;z-index:2;
+  border-top:1px solid rgba(201,162,39,0.15);
+  padding-top:clamp(0.75rem,1.5vh,1.25rem);
+}
+.footer-note{
+  font-family:'DM Sans',sans-serif;
+  font-size:clamp(0.55rem,0.8vw,0.7rem);
+  color:rgba(240,238,234,0.25);letter-spacing:0.08em;
+}
+.slide-num{
+  font-family:'Playfair Display',serif;font-style:italic;
+  font-size:clamp(0.8rem,1.2vw,1rem);color:rgba(201,162,39,0.5);
+}
+
+@keyframes rise{to{opacity:1;transform:translateY(0)}}
+</style>
+</head>
+<body>
+<div class="slide">
+  <div class="top-bar"></div>
+  <div class="header">
+    <span class="logo-text">Monte Bravo Investment Banking</span>
+    <span class="date-tag">Confidential · May 2026</span>
+  </div>
+  <div class="slide-content">
+    <p class="eyebrow">Brazilian Real Estate Investment Opportunity</p>
+    <h1 class="main-title">High-End <em>Residential</em><br>Real Estate in Brazil</h1>
+    <div class="rule"></div>
+    <p class="subtitle">A structured investment opportunity in one of Latin America's most resilient high-income residential markets, backed by Brazil's leading independent wealth manager.</p>
+    <div class="stats">
+      <div class="stat-item">
+        <span class="stat-num">R$2.9bi</span>
+        <span class="stat-label">Total Issuances</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">35</span>
+        <span class="stat-label">Operations</span>
+      </div>
+      <div class="stat-item">
+        <span class="stat-num">R$180M</span>
+        <span class="stat-label">Current Offering</span>
+      </div>
+    </div>
+  </div>
+  <div class="footer">
+    <span class="footer-note">Monte Bravo Investimentos · Internal Use Only</span>
+    <span class="slide-num">01</span>
+  </div>
+</div>
+</body>
+</html>
