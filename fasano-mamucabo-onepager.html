@@ -467,9 +467,22 @@ table.cri td:last-child{color:var(--gray)}
 
 /* ─ Print ────────────────────────────────── */
 @media print{
-  @page{size:A4;margin:0}
-  body{background:var(--white);padding:0}
-  .page{box-shadow:none}
+  @page{size:A4 portrait;margin:0}
+  html,body{
+    width:210mm;
+    height:297mm;
+    overflow:hidden;
+    background:white;
+    padding:0;
+  }
+  body{
+    display:block;
+  }
+  .page{
+    box-shadow:none;
+    transform-origin:top left;
+    /* scale applied by JS beforeprint */
+  }
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
 }
 </style>
@@ -718,23 +731,64 @@ table.cri td:last-child{color:var(--gray)}
 <script>
 (function(){
   var page = document.querySelector('.page');
-  function fit(){
+
+  /* ── Mobile scale-to-fit ── */
+  function fitScreen(){
     var vw = window.innerWidth;
-    var pw = page.offsetWidth; // natural A4 width ~794px
+    var pw = page.offsetWidth;
     if(vw < pw){
-      var scale = vw / pw;
-      page.style.transform = 'scale(' + scale + ')';
+      var s = vw / pw;
+      page.style.transform = 'scale('+s+')';
       page.style.transformOrigin = 'top left';
-      // collapse body height to match scaled page
-      document.body.style.height = Math.ceil(page.offsetHeight * scale) + 'px';
+      document.body.style.height = Math.ceil(page.offsetHeight * s) + 'px';
     } else {
       page.style.transform = '';
       page.style.transformOrigin = '';
       document.body.style.height = '';
     }
   }
-  fit();
-  window.addEventListener('resize', fit);
+
+  /* ── Print scale-to-fit (força 1 página A4) ── */
+  var A4_H_PX = Math.round(297 / 25.4 * 96); // 297mm @ 96dpi = 1122px
+  var A4_W_PX = Math.round(210 / 25.4 * 96); // 210mm @ 96dpi =  794px
+  var _savedTransform = '';
+
+  function beforePrint(){
+    // reset any screen scaling first
+    page.style.transform = '';
+    page.style.transformOrigin = '';
+    document.body.style.height = '';
+
+    var ph = page.offsetHeight;
+    var pw = page.offsetWidth;
+    var scaleH = ph > A4_H_PX ? A4_H_PX / ph : 1;
+    var scaleW = pw > A4_W_PX ? A4_W_PX / pw : 1;
+    var scale  = Math.min(scaleH, scaleW);
+
+    _savedTransform = page.style.transform;
+    if(scale < 1){
+      page.style.transform = 'scale('+scale+')';
+      page.style.transformOrigin = 'top left';
+    }
+  }
+
+  function afterPrint(){
+    page.style.transform = _savedTransform;
+    page.style.transformOrigin = '';
+    fitScreen(); // restore mobile scale if needed
+  }
+
+  // Modern browsers
+  if(window.matchMedia){
+    var mql = window.matchMedia('print');
+    mql.addListener(function(m){ m.matches ? beforePrint() : afterPrint(); });
+  }
+  // Legacy + Chrome
+  window.addEventListener('beforeprint', beforePrint);
+  window.addEventListener('afterprint',  afterPrint);
+
+  fitScreen();
+  window.addEventListener('resize', fitScreen);
 })();
 </script>
 </body>
