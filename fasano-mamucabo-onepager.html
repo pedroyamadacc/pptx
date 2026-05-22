@@ -748,34 +748,27 @@ table.cri td:last-child{color:var(--gray)}
     }
   }
 
-  /* ── Print scale-to-fit (força 1 página A4) ── */
-  var A4_H_PX = Math.round(297 / 25.4 * 96); // 297mm @ 96dpi = 1122px
-  var A4_W_PX = Math.round(210 / 25.4 * 96); // 210mm @ 96dpi =  794px
-  var _savedTransform = '';
+  /* ── Print scale-to-fit (força 1 página A4 sem coluna branca) ── */
+  // zoom afeta o layout inteiro (ao contrário de transform),
+  // por isso não deixa espaço em branco nas laterais.
+  var A4_H_PX = Math.round(297 / 25.4 * 96); // 297mm @ 96dpi ≈ 1122px
 
   function beforePrint(){
-    // reset any screen scaling first
+    // remove scaling de ecrã antes de medir
     page.style.transform = '';
     page.style.transformOrigin = '';
     document.body.style.height = '';
 
     var ph = page.offsetHeight;
-    var pw = page.offsetWidth;
-    var scaleH = ph > A4_H_PX ? A4_H_PX / ph : 1;
-    var scaleW = pw > A4_W_PX ? A4_W_PX / pw : 1;
-    var scale  = Math.min(scaleH, scaleW);
-
-    _savedTransform = page.style.transform;
-    if(scale < 1){
-      page.style.transform = 'scale('+scale+')';
-      page.style.transformOrigin = 'top left';
+    if(ph > A4_H_PX){
+      var scale = A4_H_PX / ph;
+      page.style.zoom = scale;
     }
   }
 
   function afterPrint(){
-    page.style.transform = _savedTransform;
-    page.style.transformOrigin = '';
-    fitScreen(); // restore mobile scale if needed
+    page.style.zoom = '';
+    fitScreen();
   }
 
   // Modern browsers
