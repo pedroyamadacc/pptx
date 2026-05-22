@@ -749,25 +749,25 @@ table.cri td:last-child{color:var(--gray)}
   }
 
   /* ── Print scale-to-fit (força 1 página A4 sem coluna branca) ── */
-  // zoom afeta o layout inteiro (ao contrário de transform),
-  // por isso não deixa espaço em branco nas laterais.
+  // Reduz o font-size base do html (tudo usa rem), a página encolhe
+  // proporcionalmente SEM alterar a caixa de layout nem o @page width.
   var A4_H_PX = Math.round(297 / 25.4 * 96); // 297mm @ 96dpi ≈ 1122px
+  var BASE_FONT = 10; // html { font-size: 10px }
 
   function beforePrint(){
-    // remove scaling de ecrã antes de medir
+    page.style.zoom = '';
     page.style.transform = '';
-    page.style.transformOrigin = '';
     document.body.style.height = '';
 
     var ph = page.offsetHeight;
     if(ph > A4_H_PX){
       var scale = A4_H_PX / ph;
-      page.style.zoom = scale;
+      document.documentElement.style.fontSize = (BASE_FONT * scale) + 'px';
     }
   }
 
   function afterPrint(){
-    page.style.zoom = '';
+    document.documentElement.style.fontSize = '';
     fitScreen();
   }
 
