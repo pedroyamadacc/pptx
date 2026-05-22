@@ -6,7 +6,7 @@
 <title>Fasano Mamucabo — Overview de Investimento · Monte Bravo IB</title>
 <style>
 /* ─ Webfonts (CDN) ─────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@400;700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ─ Reset ─────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -27,7 +27,7 @@ img{display:block;max-width:100%}
   --gold:   #C8A96D;
   --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --serif: 'Playfair Display', Georgia, serif;
-  --title: 'Barlow Condensed', 'Inter', sans-serif;
+  --title: 'Outfit', 'Inter', sans-serif;
 }
 
 /* ─ A4 Page ───────────────────────────────── */
@@ -301,6 +301,15 @@ strong.navy{color:var(--navy)}
 .body{
   display:grid;
   grid-template-columns:1fr 1fr;
+  align-items:stretch;
+}
+/* each column stretches and the last sec in it fills remaining height */
+.body>div{
+  display:flex;
+  flex-direction:column;
+}
+.body>div>.sec:last-child{
+  flex:1;
 }
 
 /* ─ SECTION ──────────────────────────────── */
@@ -340,14 +349,14 @@ strong.navy{color:var(--navy)}
 /* ─ Bullets ──────────────────────────────── */
 ul.bl{list-style:none;display:flex;flex-direction:column;gap:1.2mm}
 ul.bl li{
-  display:flex;gap:2.5mm;align-items:baseline;
+  display:flex;gap:2mm;align-items:flex-start;
   font-size:.69rem;color:var(--gray);line-height:1.5;
 }
 ul.bl li::before{
-  content:'·';display:block;flex-shrink:0;
-  font-size:.9rem;line-height:1;
-  color:var(--purple);margin-top:0;
-  position:relative;top:.5px;
+  content:'';display:block;flex-shrink:0;
+  width:3px;height:3px;border-radius:50%;
+  background:var(--purple);
+  margin-top:4px;
 }
 
 /* ─ Mini stat cards ───────────────────────── */
@@ -417,8 +426,8 @@ table.cri td:last-child{color:var(--gray)}
 .bottom-col:last-child{border-right:none}
 
 .glist{list-style:none;margin-top:2mm;display:flex;flex-direction:column;gap:1.2mm}
-.glist li{font-size:.65rem;color:var(--gray);padding-left:3mm;position:relative;line-height:1.4}
-.glist li::before{content:'›';position:absolute;left:0;color:var(--purple);font-weight:700}
+.glist li{font-size:.65rem;color:var(--gray);line-height:1.45;display:flex;gap:2mm;align-items:flex-start}
+.glist li::before{content:'';display:block;flex-shrink:0;width:3px;height:3px;border-radius:50%;background:var(--purple);margin-top:3.5px}
 
 /* ─ FOOTER ───────────────────────────────── */
 .ft{
