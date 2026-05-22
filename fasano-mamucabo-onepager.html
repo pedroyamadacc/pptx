@@ -6,7 +6,7 @@
 <title>Fasano Mamucabo — Overview de Investimento · Monte Bravo IB</title>
 <style>
 /* ─ Webfonts (CDN) ─────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@700;800&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
 
 /* ─ Reset ─────────────────────────────────── */
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -27,6 +27,7 @@ img{display:block;max-width:100%}
   --gold:   #C8A96D;
   --sans: 'Inter', 'Helvetica Neue', Arial, sans-serif;
   --serif: 'Playfair Display', Georgia, serif;
+  --title: 'Barlow Condensed', 'Inter', sans-serif;
 }
 
 /* ─ A4 Page ───────────────────────────────── */
@@ -76,11 +77,12 @@ strong.navy{color:var(--navy)}
 }
 
 .hd-center h1{
-  font-family:var(--serif);
-  font-size:1.55rem;
-  font-weight:400;
+  font-family:var(--title);
+  font-size:1.8rem;
+  font-weight:800;
   color:var(--white);
-  letter-spacing:.05em;
+  letter-spacing:.08em;
+  text-transform:uppercase;
   line-height:1;
 }
 
@@ -211,10 +213,12 @@ strong.navy{color:var(--navy)}
 .kpi:last-child{border-right:none}
 
 .kpi-v{
-  font-family:var(--serif);
-  font-size:1.3rem;
+  font-family:var(--title);
+  font-size:1.4rem;
+  font-weight:800;
   color:var(--white);
   line-height:1;
+  letter-spacing:.03em;
 }
 
 .kpi-v .pre{
@@ -254,7 +258,7 @@ strong.navy{color:var(--navy)}
 .timeline::before{
   content:'';
   position:absolute;
-  top:8.5mm;
+  top:5.2mm;
   left:0; right:0;
   height:1px;
   background:var(--light);
@@ -272,24 +276,25 @@ strong.navy{color:var(--navy)}
   font-weight:700;
   letter-spacing:.06em;
   color:var(--navy);
-  margin-bottom:1.5mm;
+  margin-bottom:1.2mm;
+  line-height:1.2;
 }
 
 .ti-dot{
-  width:8px; height:8px;
+  width:7px; height:7px;
   border-radius:50%;
   background:var(--purple);
   border:1.5px solid var(--bg);
   outline:1px solid var(--purple);
-  margin:0 auto 2mm;
+  margin:0 auto 1.8mm;
 }
 
 .ti-dot.navy{background:var(--navy);outline-color:var(--navy)}
 
 .ti-ev{
-  font-size:.58rem;
+  font-size:.57rem;
   color:var(--gray);
-  line-height:1.35;
+  line-height:1.3;
 }
 
 /* ─ MAIN BODY ────────────────────────────── */
@@ -333,26 +338,27 @@ strong.navy{color:var(--navy)}
 }
 
 /* ─ Bullets ──────────────────────────────── */
-ul.bl{list-style:none;display:flex;flex-direction:column;gap:1.4mm}
+ul.bl{list-style:none;display:flex;flex-direction:column;gap:1.2mm}
 ul.bl li{
-  display:flex;gap:2.5mm;align-items:flex-start;
-  font-size:.7rem;color:var(--gray);line-height:1.5;
+  display:flex;gap:2.5mm;align-items:baseline;
+  font-size:.69rem;color:var(--gray);line-height:1.5;
 }
 ul.bl li::before{
-  content:'';display:block;flex-shrink:0;
-  width:4px;height:4px;border-radius:50%;
-  background:var(--purple);margin-top:2.5px;
+  content:'·';display:block;flex-shrink:0;
+  font-size:.9rem;line-height:1;
+  color:var(--purple);margin-top:0;
+  position:relative;top:.5px;
 }
 
 /* ─ Mini stat cards ───────────────────────── */
-.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm;margin:2.5mm 0}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:2mm;margin:2mm 0 1.5mm}
 .stat{
   background:var(--bg);
   padding:2mm 2.5mm;
   border-left:2px solid var(--purple);
 }
 .stat.gold{border-color:var(--gold)}
-.stat-v{font-family:var(--serif);font-size:1rem;color:var(--navy);line-height:1}
+.stat-v{font-family:var(--title);font-size:1.05rem;font-weight:700;color:var(--navy);line-height:1;letter-spacing:.02em}
 .stat-l{font-size:.58rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--gray);margin-top:.6mm}
 
 /* ─ Image pair ────────────────────────────── */
@@ -383,20 +389,22 @@ table.cri td:last-child{color:var(--gray)}
   background:var(--purple);
   padding:3mm;text-align:center;margin-top:2.5mm;
 }
-.tir-v{font-family:var(--serif);font-size:1.7rem;color:var(--white);line-height:1}
+.tir-v{font-family:var(--title);font-size:1.9rem;font-weight:800;color:var(--white);line-height:1;letter-spacing:.04em}
 .tir-l{font-size:.6rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.55);margin-top:.8mm}
 
 /* ─ Equity split ──────────────────────────── */
 .eq{display:flex;gap:2.5mm;margin-top:2.5mm}
 .eq-p{flex:1;background:var(--navy);padding:2.5mm 3mm}
-.eq-p.dim .eq-pct{color:rgba(255,255,255,.35)}
-.eq-pct{font-family:var(--serif);font-size:1.6rem;color:var(--white);line-height:1}
-.eq-name{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.3);margin-top:.8mm}
-.eq-amt{font-size:.82rem;color:rgba(255,255,255,.65);margin-top:.8mm}
+.eq-p.dim{background:rgba(32,26,71,.55)}
+.eq-pct{font-family:var(--title);font-size:1.9rem;font-weight:800;color:var(--white);line-height:1;letter-spacing:.02em}
+.eq-p.dim .eq-pct{color:rgba(255,255,255,.6)}
+.eq-name{font-size:.6rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.4);margin-top:.8mm}
+.eq-amt{font-size:.78rem;color:rgba(255,255,255,.6);margin-top:.8mm}
+.eq-p.dim .eq-amt{color:rgba(255,255,255,.35)}
 
 /* ─ Divider row between sections ───────────── */
 .divrow{
-  height:1px;background:var(--light);margin:2.5mm 0;
+  height:1px;background:var(--light);margin:1.5mm 0;
 }
 
 /* ─ Bottom strip ──────────────────────────── */
