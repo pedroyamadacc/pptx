@@ -450,6 +450,21 @@ table.cri td:last-child{color:var(--gray)}
 .ft-disc{font-size:.58rem;color:rgba(255,255,255,.2);line-height:1.55;flex:1}
 .ft-meta{font-size:.6rem;color:rgba(255,255,255,.18);text-align:right;white-space:nowrap;flex-shrink:0}
 
+/* ─ Mobile scale-to-fit ─────────────────── */
+@media screen and (max-width:820px){
+  body{
+    padding:0;
+    background:#1c1c2e;
+    justify-content:flex-start;
+    align-items:flex-start;
+    overflow-x:hidden;
+  }
+  .page{
+    transform-origin:top left;
+    /* scale set dynamically by JS */
+  }
+}
+
 /* ─ Print ────────────────────────────────── */
 @media print{
   @page{size:A4;margin:0}
@@ -699,5 +714,28 @@ table.cri td:last-child{color:var(--gray)}
 </footer>
 
 </div><!-- /page -->
+
+<script>
+(function(){
+  var page = document.querySelector('.page');
+  function fit(){
+    var vw = window.innerWidth;
+    var pw = page.offsetWidth; // natural A4 width ~794px
+    if(vw < pw){
+      var scale = vw / pw;
+      page.style.transform = 'scale(' + scale + ')';
+      page.style.transformOrigin = 'top left';
+      // collapse body height to match scaled page
+      document.body.style.height = Math.ceil(page.offsetHeight * scale) + 'px';
+    } else {
+      page.style.transform = '';
+      page.style.transformOrigin = '';
+      document.body.style.height = '';
+    }
+  }
+  fit();
+  window.addEventListener('resize', fit);
+})();
+</script>
 </body>
 </html>
