@@ -468,20 +468,28 @@ table.cri td:last-child{color:var(--gray)}
 /* ─ Print ────────────────────────────────── */
 @media print{
   @page{size:A4 portrait;margin:0}
-  html,body{
-    width:210mm;
-    height:297mm;
-    overflow:hidden;
-    background:white;
-    padding:0;
+  html{
+    margin:0!important;
+    padding:0!important;
+    width:210mm!important;
+    height:297mm!important;
   }
   body{
-    display:block;
+    display:block!important;
+    margin:0!important;
+    padding:0!important;
+    width:210mm!important;
+    height:297mm!important;
+    overflow:hidden!important;
+    background:white!important;
+    justify-content:flex-start!important;
   }
   .page{
-    box-shadow:none;
-    transform-origin:top left;
-    /* scale applied by JS beforeprint */
+    box-shadow:none!important;
+    margin:0!important;
+    width:210mm!important;
+    transform:none!important;
+    transform-origin:top left!important;
   }
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
 }
@@ -755,10 +763,16 @@ table.cri td:last-child{color:var(--gray)}
   var BASE_FONT = 10; // html { font-size: 10px }
 
   function beforePrint(){
+    // reset any screen-mode inline styles
     page.style.zoom = '';
     page.style.transform = '';
+    page.style.transformOrigin = '';
+    page.style.width = '';
     document.body.style.height = '';
+    document.body.style.width = '';
+    document.documentElement.style.fontSize = '';
 
+    // scale height to fit one A4 page
     var ph = page.offsetHeight;
     if(ph > A4_H_PX){
       var scale = A4_H_PX / ph;
