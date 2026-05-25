@@ -468,28 +468,21 @@ table.cri td:last-child{color:var(--gray)}
 /* ─ Print ────────────────────────────────── */
 @media print{
   @page{size:A4 portrait;margin:0}
-  html{
+  html,body{
     margin:0!important;
     padding:0!important;
-    width:210mm!important;
-    height:297mm!important;
-  }
-  body{
-    display:block!important;
-    margin:0!important;
-    padding:0!important;
-    width:210mm!important;
-    height:297mm!important;
+    width:100%!important;
+    height:100%!important;
     overflow:hidden!important;
     background:white!important;
-    justify-content:flex-start!important;
+    display:block!important;
   }
   .page{
     box-shadow:none!important;
     margin:0!important;
-    width:210mm!important;
+    width:100%!important;
+    min-width:0!important;
     transform:none!important;
-    transform-origin:top left!important;
   }
   *{-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
 }
@@ -763,7 +756,7 @@ table.cri td:last-child{color:var(--gray)}
   var BASE_FONT = 10; // html { font-size: 10px }
 
   function beforePrint(){
-    // reset any screen-mode inline styles
+    // reset any screen-mode inline styles so measurements are clean
     page.style.zoom = '';
     page.style.transform = '';
     page.style.transformOrigin = '';
@@ -771,13 +764,7 @@ table.cri td:last-child{color:var(--gray)}
     document.body.style.height = '';
     document.body.style.width = '';
     document.documentElement.style.fontSize = '';
-
-    // scale height to fit one A4 page
-    var ph = page.offsetHeight;
-    if(ph > A4_H_PX){
-      var scale = A4_H_PX / ph;
-      document.documentElement.style.fontSize = (BASE_FONT * scale) + 'px';
-    }
+    // nothing else needed — @media print handles width via width:100%
   }
 
   function afterPrint(){
