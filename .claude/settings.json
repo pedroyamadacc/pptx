@@ -1,0 +1,11 @@
+{
+  "skills": [
+    ".claude/skills/algorithmic-art/SKILL.md",
+    ".claude/skills/canvas-design/SKILL.md",
+    ".claude/skills/visualize/SKILL.md",
+    ".claude/skills/claude-design-skill/SKILL.md",
+    ".claude/skills/ui-ux-pro-max/SKILL.md",
+    ".claude/skills/creative-design/frontend-design/SKILL.md",
+    ".claude/skills/document-processing/pptx/SKILL.md"
+  ]
+}
