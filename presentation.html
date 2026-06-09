@@ -1517,6 +1517,323 @@
 
 
 <!-- ══════════════════════════════════════════
+  SLIDE 11iso — CIRCUITO FIP-IE (ISOMETRIC)
+══════════════════════════════════════════ -->
+<div class="slide" id="s11iso" style="background:#070d1a;overflow:hidden;position:absolute;inset:0;width:1280px;height:720px;">
+
+  <!-- Title overlay top-left -->
+  <div style="position:absolute;top:28px;left:48px;z-index:10;">
+    <div style="display:flex;align-items:center;gap:10px;margin-bottom:6px;">
+      <div style="display:flex;gap:3px;align-items:flex-end;">
+        <span style="background:#F5A800;width:4px;height:8px;border-radius:2px 2px 0 0;display:inline-block;"></span>
+        <span style="background:#F5A800;width:4px;height:12px;border-radius:2px 2px 0 0;display:inline-block;"></span>
+        <span style="background:#F5A800;width:4px;height:16px;border-radius:2px 2px 0 0;display:inline-block;"></span>
+        <span style="background:#F5A800;width:4px;height:12px;border-radius:2px 2px 0 0;display:inline-block;"></span>
+        <span style="background:#F5A800;width:4px;height:8px;border-radius:2px 2px 0 0;display:inline-block;"></span>
+      </div>
+      <div style="color:white;font-size:28px;font-weight:800;letter-spacing:-0.5px;">Circuito FIP-IE</div>
+    </div>
+    <div style="color:rgba(255,255,255,0.45);font-size:13px;font-weight:400;margin-left:34px;">Do cotista ao projeto — e de volta</div>
+  </div>
+
+  <!-- Slide number -->
+  <div style="position:absolute;bottom:22px;left:48px;color:rgba(255,255,255,0.2);font-size:9px;font-weight:700;letter-spacing:0.1em;">11 / 13</div>
+
+  <!-- Main SVG scene -->
+  <div style="position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);margin-top:16px;">
+  <svg width="900" height="460" viewBox="0 0 900 460" xmlns="http://www.w3.org/2000/svg" style="overflow:visible;">
+    <defs>
+      <filter id="glow" x="-40%" y="-40%" width="180%" height="180%">
+        <feGaussianBlur stdDeviation="4" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <filter id="glow2" x="-60%" y="-60%" width="220%" height="220%">
+        <feGaussianBlur stdDeviation="7" result="blur"/>
+        <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+      </filter>
+      <radialGradient id="bgGlow1" cx="25%" cy="55%" r="35%">
+        <stop offset="0%" stop-color="#1E3A8A" stop-opacity="0.35"/>
+        <stop offset="100%" stop-color="#070d1a" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="bgGlow2" cx="50%" cy="45%" r="30%">
+        <stop offset="0%" stop-color="#14103A" stop-opacity="0.5"/>
+        <stop offset="100%" stop-color="#070d1a" stop-opacity="0"/>
+      </radialGradient>
+      <radialGradient id="bgGlow3" cx="75%" cy="52%" r="30%">
+        <stop offset="0%" stop-color="#0d3318" stop-opacity="0.4"/>
+        <stop offset="100%" stop-color="#070d1a" stop-opacity="0"/>
+      </radialGradient>
+    </defs>
+
+    <!-- Background glow zones -->
+    <rect width="900" height="460" fill="#070d1a"/>
+    <ellipse cx="175" cy="350" rx="200" ry="120" fill="url(#bgGlow1)"/>
+    <ellipse cx="450" cy="310" rx="220" ry="150" fill="url(#bgGlow2)"/>
+    <ellipse cx="690" cy="345" rx="190" ry="115" fill="url(#bgGlow3)"/>
+
+    <!-- ═══════════════════════════════════════
+         PLATFORM 1 — COTISTAS (left)
+    ═══════════════════════════════════════ -->
+    <!-- Top face -->
+    <polygon points="175,293 260,335 175,377 90,335" fill="#1a3a6e"/>
+    <!-- Left slab -->
+    <polygon points="90,335 175,377 175,389 90,347" fill="#0f2550"/>
+    <!-- Right slab -->
+    <polygon points="260,335 175,377 175,389 260,347" fill="#0a1c40"/>
+    <!-- Platform highlight edge -->
+    <polyline points="90,335 175,293 260,335" fill="none" stroke="rgba(59,130,246,0.3)" stroke-width="1"/>
+
+    <!-- Building B3 (small, back-left) -->
+    <polygon points="112,320 130,329 130,281 112,272" fill="#1E3A8A"/>
+    <polygon points="148,320 130,329 130,281 148,272" fill="#1D4ED8"/>
+    <polygon points="130,263 148,272 130,281 112,272" fill="#3B82F6"/>
+
+    <!-- Building B1 (center-left) -->
+    <polygon points="122,307 152,322 152,247 122,232" fill="#1E40AF"/>
+    <polygon points="182,307 152,322 152,247 182,232" fill="#2563EB"/>
+    <polygon points="152,217 182,232 152,247 122,232" fill="#3B82F6"/>
+
+    <!-- Building B2 (center-right, tallest) -->
+    <polygon points="172,293 197,305 197,215 172,203" fill="#1D4ED8"/>
+    <polygon points="222,293 197,305 197,215 222,203" fill="#2563EB"/>
+    <polygon points="197,191 222,203 197,215 172,203" fill="#60A5FA"/>
+
+    <!-- Window details B1 -->
+    <rect x="128" y="238" width="8" height="5" rx="1" fill="rgba(147,197,253,0.6)"/>
+    <rect x="142" y="238" width="8" height="5" rx="1" fill="rgba(147,197,253,0.6)"/>
+    <rect x="128" y="252" width="8" height="5" rx="1" fill="rgba(147,197,253,0.4)"/>
+    <rect x="142" y="252" width="8" height="5" rx="1" fill="rgba(147,197,253,0.7)"/>
+    <!-- Window details B2 -->
+    <rect x="178" y="210" width="8" height="5" rx="1" fill="rgba(147,197,253,0.6)"/>
+    <rect x="192" y="210" width="8" height="5" rx="1" fill="rgba(147,197,253,0.8)"/>
+    <rect x="178" y="224" width="8" height="5" rx="1" fill="rgba(147,197,253,0.5)"/>
+
+    <!-- People above B1 -->
+    <circle cx="152" cy="207" r="5.5" fill="#93C5FD" stroke="#60A5FA" stroke-width="1"/>
+    <line x1="152" y1="213" x2="152" y2="222" stroke="#93C5FD" stroke-width="1.5"/>
+    <line x1="145" y1="217" x2="159" y2="217" stroke="#93C5FD" stroke-width="1.5"/>
+    <!-- People above B2 -->
+    <circle cx="197" cy="181" r="5.5" fill="#93C5FD" stroke="#60A5FA" stroke-width="1"/>
+    <line x1="197" y1="187" x2="197" y2="196" stroke="#93C5FD" stroke-width="1.5"/>
+    <line x1="190" y1="191" x2="204" y2="191" stroke="#93C5FD" stroke-width="1.5"/>
+    <!-- Second person near B2 -->
+    <circle cx="210" cy="185" r="4.5" fill="#7DD3FC" stroke="#38BDF8" stroke-width="1"/>
+    <line x1="210" y1="190" x2="210" y2="198" stroke="#7DD3FC" stroke-width="1.5"/>
+
+    <!-- ═══════════════════════════════════════
+         PLATFORM 2 — FIP-IE (center, dominant)
+    ═══════════════════════════════════════ -->
+    <!-- Top face -->
+    <polygon points="430,258 525,305 430,352 335,305" fill="#0E1A40" stroke="#F5A800" stroke-width="1.5"/>
+    <!-- Left slab -->
+    <polygon points="335,305 430,352 430,367 335,320" fill="#070d24"/>
+    <!-- Right slab -->
+    <polygon points="525,305 430,352 430,367 525,320" fill="#0a0e2a"/>
+    <!-- Platform edge glow -->
+    <polyline points="335,305 430,258 525,305" fill="none" stroke="#F5A800" stroke-width="1" opacity="0.6"/>
+
+    <!-- MAIN TOWER -->
+    <!-- Left wall -->
+    <polygon points="378,255 430,281 430,151 378,125" fill="#0A0E28"/>
+    <!-- Right wall -->
+    <polygon points="482,255 430,281 430,151 482,125" fill="#14103A"/>
+    <!-- Top roof -->
+    <polygon points="430,99 482,125 430,151 378,125" fill="#1a1660"/>
+    <!-- Gold band right -->
+    <polygon points="482,170 430,196 430,186 482,160" fill="#F5A800"/>
+    <!-- Gold band left -->
+    <polygon points="378,170 430,196 430,186 378,160" fill="#D97706"/>
+    <!-- Gold top accent right -->
+    <polygon points="482,130 430,156 430,151 482,125" fill="#F5A800" opacity="0.8"/>
+    <!-- Gold top accent left -->
+    <polygon points="378,130 430,156 430,151 378,125" fill="#D97706" opacity="0.8"/>
+
+    <!-- Tower window grid (right face) -->
+    <rect x="440" y="138" width="10" height="7" rx="1" fill="rgba(245,168,0,0.5)"/>
+    <rect x="456" y="138" width="10" height="7" rx="1" fill="rgba(245,168,0,0.5)"/>
+    <rect x="440" y="153" width="10" height="7" rx="1" fill="rgba(245,168,0,0.3)"/>
+    <rect x="456" y="153" width="10" height="7" rx="1" fill="rgba(245,168,0,0.6)"/>
+    <rect x="440" y="200" width="10" height="7" rx="1" fill="rgba(245,168,0,0.4)"/>
+    <rect x="456" y="200" width="10" height="7" rx="1" fill="rgba(245,168,0,0.4)"/>
+    <!-- Tower window grid (left face) -->
+    <rect x="386" y="138" width="10" height="7" rx="1" fill="rgba(245,168,0,0.3)"/>
+    <rect x="402" y="138" width="10" height="7" rx="1" fill="rgba(245,168,0,0.3)"/>
+    <rect x="386" y="153" width="10" height="7" rx="1" fill="rgba(245,168,0,0.2)"/>
+    <rect x="402" y="153" width="10" height="7" rx="1" fill="rgba(245,168,0,0.4)"/>
+
+    <!-- FIP-IE text label on tower right face -->
+    <text x="462" y="218" fill="white" font-size="13" font-weight="800" font-family="Inter,sans-serif" text-anchor="start" transform="skewY(14) translate(-30,-28)">FIP-IE</text>
+    <text x="462" y="234" fill="rgba(245,168,0,0.8)" font-size="9" font-weight="600" font-family="Inter,sans-serif" text-anchor="start" transform="skewY(14) translate(-30,-28)">VOLTARA</text>
+
+    <!-- ═══════════════════════════════════════
+         PLATFORM 3 — PROJETOS (right)
+    ═══════════════════════════════════════ -->
+    <!-- Top face -->
+    <polygon points="675,286 760,328 675,370 590,328" fill="#0d2e14"/>
+    <!-- Left slab -->
+    <polygon points="590,328 675,370 675,382 590,340" fill="#071a0b"/>
+    <!-- Right slab -->
+    <polygon points="760,328 675,370 675,382 760,340" fill="#051408"/>
+    <!-- Platform edge -->
+    <polyline points="590,328 675,286 760,328" fill="none" stroke="rgba(74,222,128,0.25)" stroke-width="1"/>
+
+    <!-- PCH Building -->
+    <polygon points="668,293 698,308 698,226 668,211" fill="#374151"/>
+    <polygon points="728,293 698,308 698,226 728,211" fill="#6B7280"/>
+    <polygon points="698,196 728,211 698,226 668,211" fill="#9CA3AF"/>
+    <!-- PCH top detail -->
+    <polygon points="680,220 698,229 698,209 680,200" fill="#4B5563"/>
+    <polygon points="716,220 698,229 698,209 716,200" fill="#9CA3AF"/>
+    <polygon points="698,191 716,200 698,209 680,200" fill="#D1D5DB"/>
+    <!-- PCH windows -->
+    <rect x="674" y="218" width="8" height="6" rx="1" fill="rgba(250,204,21,0.5)"/>
+    <rect x="686" y="218" width="8" height="6" rx="1" fill="rgba(250,204,21,0.4)"/>
+    <rect x="674" y="232" width="8" height="6" rx="1" fill="rgba(250,204,21,0.3)"/>
+    <rect x="686" y="232" width="8" height="6" rx="1" fill="rgba(250,204,21,0.5)"/>
+    <!-- PCH label on right face -->
+    <text x="706" y="258" fill="rgba(255,255,255,0.7)" font-size="9" font-weight="700" font-family="Inter,sans-serif">PCH</text>
+
+    <!-- Solar panels (6 thin rhombuses) -->
+    <!-- Panel 1 (621,305) -->
+    <polygon points="621,296 643,303 621,310 599,303" fill="#0f2a5c"/>
+    <polygon points="599,303 621,310 621,312 599,305" fill="#0a1a40"/>
+    <polygon points="643,303 621,310 621,312 643,305" fill="#0a1a40"/>
+    <!-- Panel 2 (644,294) -->
+    <polygon points="644,285 666,292 644,299 622,292" fill="#1a3a8a"/>
+    <polygon points="622,292 644,299 644,301 622,294" fill="#0a1a40"/>
+    <polygon points="666,292 644,299 644,301 666,294" fill="#0a1a40"/>
+    <!-- Panel 3 (667,305) -->
+    <polygon points="667,296 689,303 667,310 645,303" fill="#0f2a5c"/>
+    <polygon points="645,303 667,310 667,312 645,305" fill="#0a1a40"/>
+    <polygon points="689,303 667,310 667,312 689,305" fill="#0a1a40"/>
+    <!-- Panel 4 (632,316) -->
+    <polygon points="632,307 654,314 632,321 610,314" fill="#1a3a8a"/>
+    <polygon points="610,314 632,321 632,323 610,316" fill="#0a1a40"/>
+    <polygon points="654,314 632,321 632,323 654,316" fill="#0a1a40"/>
+    <!-- Panel 5 (655,305) -->
+    <polygon points="655,296 677,303 655,310 633,303" fill="#0f2a5c"/>
+    <polygon points="633,303 655,310 655,312 633,305" fill="#0a1a40"/>
+    <polygon points="677,303 655,310 655,312 677,305" fill="#0a1a40"/>
+    <!-- Panel 6 (620,318) -->
+    <polygon points="620,309 642,316 620,323 598,316" fill="#1a3a8a"/>
+    <polygon points="598,316 620,323 620,325 598,318" fill="#0a1a40"/>
+    <polygon points="642,316 620,323 620,325 642,318" fill="#0a1a40"/>
+
+    <!-- ═══════════════════════════════════════
+         GLOWING CONNECTIONS
+    ═══════════════════════════════════════ -->
+    <!-- Left to center — gold, capital flowing in -->
+    <path d="M 255,332 C 290,318 310,308 335,308" stroke="#F5A800" stroke-width="3" fill="none" opacity="0.9" filter="url(#glow)"/>
+    <path d="M 255,337 C 290,323 310,313 335,313" stroke="#F5A800" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <!-- Arrowhead -->
+    <polygon points="335,305 326,301 326,312" fill="#F5A800" opacity="0.9"/>
+
+    <!-- Center to right — blue, deployment -->
+    <path d="M 525,308 C 550,315 565,320 590,325" stroke="#60A5FA" stroke-width="3" fill="none" opacity="0.9" filter="url(#glow)"/>
+    <path d="M 525,313 C 550,320 565,325 590,330" stroke="#60A5FA" stroke-width="1.5" fill="none" opacity="0.4"/>
+    <!-- Arrowhead -->
+    <polygon points="590,322 581,316 581,327" fill="#60A5FA" opacity="0.9"/>
+
+    <!-- Return: right to center — green dashed -->
+    <path d="M 590,321 C 565,314 550,309 525,305" stroke="#4ADE80" stroke-width="2" stroke-dasharray="6,4" fill="none" opacity="0.7" filter="url(#glow)"/>
+
+    <!-- Return to cotistas: center to left — gold dashed -->
+    <path d="M 335,305 C 310,305 290,315 255,328" stroke="#F5A800" stroke-width="2" stroke-dasharray="6,4" fill="none" opacity="0.7"/>
+
+    <!-- ═══════════════════════════════════════
+         FLOW LABELS
+    ═══════════════════════════════════════ -->
+    <!-- Capital label -->
+    <rect x="272" y="309" width="52" height="16" rx="4" fill="rgba(0,0,0,0.6)"/>
+    <text x="298" y="321" fill="#F5A800" font-size="10" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Capital</text>
+
+    <!-- Deployment label -->
+    <rect x="540" y="309" width="60" height="16" rx="4" fill="rgba(0,0,0,0.6)"/>
+    <text x="570" y="321" fill="#60A5FA" font-size="10" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Deploy</text>
+
+    <!-- Retornos label -->
+    <rect x="540" y="291" width="60" height="16" rx="4" fill="rgba(0,0,0,0.6)"/>
+    <text x="570" y="303" fill="#4ADE80" font-size="10" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Retornos</text>
+
+    <!-- Distribuições label -->
+    <rect x="270" y="325" width="74" height="16" rx="4" fill="rgba(0,0,0,0.6)"/>
+    <text x="307" y="337" fill="#F5A800" font-size="10" font-weight="700" font-family="Inter,sans-serif" text-anchor="middle">Distribuições</text>
+
+    <!-- ═══════════════════════════════════════
+         PLATFORM LABELS
+    ═══════════════════════════════════════ -->
+    <!-- COTISTAS label -->
+    <rect x="120" y="394" width="112" height="20" rx="6" fill="rgba(30,58,138,0.7)" stroke="rgba(59,130,246,0.4)" stroke-width="1"/>
+    <text x="176" y="408" fill="white" font-size="12" font-weight="800" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.08em">COTISTAS</text>
+    <text x="176" y="422" fill="rgba(148,163,184,0.8)" font-size="9.5" font-family="Inter,sans-serif" text-anchor="middle">Famílias • Empresa • Inst.</text>
+
+    <!-- FIP-IE tower label (on side face, as a floating badge) -->
+    <rect x="488" y="198" width="72" height="36" rx="6" fill="rgba(10,14,40,0.85)" stroke="#F5A800" stroke-width="1"/>
+    <text x="524" y="211" fill="white" font-size="12" font-weight="800" font-family="Inter,sans-serif" text-anchor="middle">FIP-IE</text>
+    <text x="524" y="225" fill="rgba(245,168,0,0.85)" font-size="9" font-weight="600" font-family="Inter,sans-serif" text-anchor="middle">VOLTARA</text>
+
+    <!-- PROJETOS label -->
+    <rect x="613" y="388" width="126" height="20" rx="6" fill="rgba(13,46,20,0.7)" stroke="rgba(74,222,128,0.35)" stroke-width="1"/>
+    <text x="676" y="402" fill="white" font-size="12" font-weight="800" font-family="Inter,sans-serif" text-anchor="middle" letter-spacing="0.08em">PROJETOS</text>
+    <text x="676" y="417" fill="rgba(148,163,184,0.8)" font-size="9.5" font-family="Inter,sans-serif" text-anchor="middle">PCH + Solar • 57 MWp</text>
+
+  </svg>
+  </div>
+
+  <!-- Legend panel (right side) -->
+  <div style="position:absolute;right:28px;top:50%;transform:translateY(-50%);width:268px;background:rgba(5,8,20,0.88);border:1px solid rgba(245,168,0,0.25);border-radius:10px;padding:16px 18px;">
+    <div style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:12px;">Participantes</div>
+
+    <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:14px;">
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:9px;height:9px;border-radius:50%;background:#3B82F6;flex-shrink:0;margin-top:2px;"></div>
+        <div>
+          <div style="color:white;font-size:11px;font-weight:700;">COTISTAS</div>
+          <div style="color:rgba(148,163,184,0.8);font-size:9.5px;line-height:1.35;">Sócios, Herdeiros, Institucionais</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:9px;height:9px;border-radius:50%;background:#F5A800;flex-shrink:0;margin-top:2px;"></div>
+        <div>
+          <div style="color:white;font-size:11px;font-weight:700;">FIP-IE <span style="background:#F5A800;color:#14103A;font-size:8px;font-weight:800;padding:1px 5px;border-radius:3px;margin-left:4px;">★ Isenção IRRF</span></div>
+          <div style="color:rgba(148,163,184,0.8);font-size:9.5px;line-height:1.35;">Voltara Infraestrutura (CVM 175)</div>
+        </div>
+      </div>
+      <div style="display:flex;gap:10px;align-items:flex-start;">
+        <div style="width:9px;height:9px;border-radius:50%;background:#4ADE80;flex-shrink:0;margin-top:2px;"></div>
+        <div>
+          <div style="color:white;font-size:11px;font-weight:700;">PROJETOS</div>
+          <div style="color:rgba(148,163,184,0.8);font-size:9.5px;line-height:1.35;">PCH Rio Verde/Serrana + Solar<br>(57 MWp total)</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.1);padding-top:10px;">
+      <div style="font-size:10px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:8px;">Fluxos</div>
+      <div style="display:flex;flex-direction:column;gap:6px;">
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg width="30" height="10"><line x1="0" y1="5" x2="30" y2="5" stroke="#F5A800" stroke-width="2.5"/></svg>
+          <span style="color:rgba(255,255,255,0.7);font-size:9.5px;">Capital integralizado</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg width="30" height="10"><line x1="0" y1="5" x2="30" y2="5" stroke="#60A5FA" stroke-width="2.5"/></svg>
+          <span style="color:rgba(255,255,255,0.7);font-size:9.5px;">Investimento em projetos</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg width="30" height="10"><line x1="0" y1="5" x2="30" y2="5" stroke="#4ADE80" stroke-width="2" stroke-dasharray="5,3"/></svg>
+          <span style="color:rgba(255,255,255,0.7);font-size:9.5px;">Retorno dos projetos</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:8px;">
+          <svg width="30" height="10"><line x1="0" y1="5" x2="30" y2="5" stroke="#F5A800" stroke-width="2" stroke-dasharray="5,3"/></svg>
+          <span style="color:rgba(255,255,255,0.7);font-size:9.5px;">Distribuições aos cotistas</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- ══════════════════════════════════════════
   SLIDE 11 — ESTRUTURA OPERACIONAL FIP-IE
 ══════════════════════════════════════════ -->
 <div class="slide s-content" id="s11">
@@ -1704,7 +2021,7 @@
 <div id="nav">
   <button onclick="go(-1)">← Anterior</button>
   <div id="dots"></div>
-  <span id="counter">1 / 12</span>
+  <span id="counter">1 / 13</span>
   <button onclick="go(1)">Próximo →</button>
 </div>
 
